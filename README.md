@@ -78,9 +78,9 @@ Eight test datasets were created to evaluate algorithm performance across differ
 
 ### 2.2 Cost Verification
 
-✅ **All test cases passed:** Prim's and Kruskal's algorithms produced **identical MST costs** for all 8 datasets, confirming correctness of both implementations.
+ **All test cases passed:** Prim's and Kruskal's algorithms produced **identical MST costs** for all 8 datasets, confirming correctness of both implementations.
 
-✅ **MST Properties Verified:**
+ **MST Properties Verified:**
 - All MSTs contain exactly V-1 edges
 - All MSTs are acyclic (no cycles detected)
 - All MSTs span connected components correctly
@@ -216,16 +216,16 @@ P = Prim's, K = Kruskal's
 ### 5.1 Prim's Algorithm
 
 **Strengths:**
-- ✅ Fewer total operations (good for operation-limited environments)
-- ✅ Better for dense graphs in theory
-- ✅ Can start from any vertex (flexible)
-- ✅ Works well with adjacency matrix representation
+-  Fewer total operations (good for operation-limited environments)
+-  Better for dense graphs in theory
+-  Can start from any vertex (flexible)
+-  Works well with adjacency matrix representation
 
 **Weaknesses:**
-- ❌ Slower execution time in practice (priority queue overhead)
-- ❌ More complex implementation
-- ❌ Larger constant factors in running time
-- ❌ Less predictable performance
+-  Slower execution time in practice (priority queue overhead)
+-  More complex implementation
+-  Larger constant factors in running time
+-  Less predictable performance
 
 **Best Use Cases:**
 - Dense graphs where E ≈ V²
@@ -236,16 +236,16 @@ P = Prim's, K = Kruskal's
 ### 5.2 Kruskal's Algorithm
 
 **Strengths:**
-- ✅ Faster execution time (up to 3× in our tests)
-- ✅ Simpler, more elegant implementation
-- ✅ More predictable performance
-- ✅ Better cache locality
+-  Faster execution time (up to 3× in our tests)
+-  Simpler, more elegant implementation
+-  More predictable performance
+-  Better cache locality
 
 **Weaknesses:**
-- ❌ More operations counted (Union-Find overhead)
-- ❌ Requires sorting all edges upfront
-- ❌ Less efficient for extremely dense graphs in theory
-- ❌ Requires edge list representation
+-  More operations counted (Union-Find overhead)
+-  Requires sorting all edges upfront
+-  Less efficient for extremely dense graphs in theory
+-  Requires edge list representation
 
 **Best Use Cases:**
 - Sparse graphs (E ≈ V)
@@ -306,11 +306,11 @@ P = Prim's, K = Kruskal's
 
 ### 8.1 Key Findings Summary
 
-1. **Correctness:** ✅ Both algorithms produce identical MST costs across all test cases
-2. **Speed Winner:** 🏆 **Kruskal's Algorithm** (2.93× faster on average)
-3. **Efficiency Winner:** 🏆 **Prim's Algorithm** (2.32× fewer operations)
-4. **Consistency:** 🏆 **Kruskal's Algorithm** (more predictable timing)
-5. **Scalability:** 🏆 **Kruskal's Algorithm** (better for large graphs)
+1. **Correctness:** Both algorithms produce identical MST costs across all test cases
+2. **Speed Winner:** **Kruskal's Algorithm** (2.93× faster on average)
+3. **Efficiency Winner:** **Prim's Algorithm** (2.32× fewer operations)
+4. **Consistency:** **Kruskal's Algorithm** (more predictable timing)
+5. **Scalability:** **Kruskal's Algorithm** (better for large graphs)
 
 ### 8.2 Recommendations by Scenario
 
@@ -363,52 +363,6 @@ Potential areas for further investigation:
 3. Hybrid approaches combining both strategies
 4. Impact of different Union-Find optimizations
 5. Performance on graphs with 100+ vertices
-
----
-
-## 9. References
-
-### Algorithm Theory
-1. Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2009). *Introduction to Algorithms* (3rd ed.). MIT Press. Chapter 23: Minimum Spanning Trees.
-
-2. Tarjan, R. E. (1983). "Data structures and network algorithms." *Society for Industrial and Applied Mathematics*.
-
-### Implementation References
-3. Oracle Java Documentation. (2024). *PriorityQueue Class Documentation*. Retrieved from https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/PriorityQueue.html
-
-4. Sedgewick, R., & Wayne, K. (2011). *Algorithms* (4th ed.). Addison-Wesley. Section 4.3: Minimum Spanning Trees.
-
-### Union-Find Optimization
-5. Tarjan, R. E., & van Leeuwen, J. (1984). "Worst-case analysis of set union algorithms." *Journal of the ACM*, 31(2), 245-281.
-
-### Testing Methodology
-6. JUnit 5 Documentation. (2024). *JUnit 5 User Guide*. Retrieved from https://junit.org/junit5/docs/current/user-guide/
-
----
-
-## Appendix A: Test Environment
-
-**Hardware:**
-- Processor: [Your CPU]
-- RAM: [Your RAM]
-- OS: [Your OS]
-
-**Software:**
-- Java Version: 11
-- Maven Version: 3.6+
-- IDE: [Your IDE]
-
-**Testing Date:** October 26, 2025
-
----
-
-## Appendix B: MST Validation
-
-All MSTs were validated for:
-- ✅ Correct edge count (V-1 edges)
-- ✅ Acyclicity (no cycles)
-- ✅ Connectivity (spans all vertices in connected components)
-- ✅ Minimum cost (verified by manual calculation for small graphs)
 
 ---
 
