@@ -56,3 +56,27 @@ ehthumbs.db
 *.bak
 *.swp
 *~
+
+# =======================================================
+# НОВЫЙ РАЗДЕЛ: ИСКЛЮЧЕНИЯ ДЛЯ ВЫХОДНЫХ ДАННЫХ
+# =======================================================
+
+# Игнорировать ВСЁ внутри папки 'output', кроме необходимых файлов.
+# Обычно мы игнорируем всю папку output, НО:
+# 1. Мы хотим закомитить результаты и картинки для сдачи.
+# 2. Оставим правило, чтобы игнорировать ВСЁ, что не нужно явно.
+
+# --- Исключения для файлов, которые должны быть закомичены ---
+!src/main/resources/output/results.json
+!src/main/resources/output/summary.csv
+!src/main/resources/output/visualizations/
+!src/main/resources/output/visualizations/*.png
+
+# Если у вас есть папка 'output' (без 'src/main/resources/'), раскомментируйте ниже:
+# output/
+# !output/results.json
+# !output/summary.csv
+# !output/visualizations/
+# !output/visualizations/*.png
+
+# -------------------------------------------------------------
