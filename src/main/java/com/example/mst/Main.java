@@ -48,7 +48,7 @@ public class Main {
         try {
             printHeader();
 
-            System.out.println("📂 Reading graphs from: " + inputFile);
+            System.out.println("Reading graphs from: " + inputFile);
 
             // Read graphs from JSON file
             JsonReader reader = new JsonReader();
@@ -62,7 +62,7 @@ public class Main {
             // Process each graph
             for (Graph graph : graphs) {
                 printSeparator();
-                System.out.println("📊 Processing " + graph);
+                System.out.println(" Processing " + graph);
                 System.out.println();
 
                 // Print detailed graph information
@@ -70,7 +70,7 @@ public class Main {
 
                 // Check if graph is connected
                 if (!graph.isConnected()) {
-                    System.out.println("⚠️  WARNING: Graph is disconnected!");
+                    System.out.println("  WARNING: Graph is disconnected!");
                     System.out.println("   MST may not span all vertices.\n");
                 }
 
@@ -79,14 +79,14 @@ public class Main {
                     try {
                         String graphImagePath = visualizationDir + "graph_" + graph.getId() + "_original.png";
                         visualizer.visualizeGraph(graph, graphImagePath);
-                        System.out.println("🖼️  Graph visualization saved: " + graphImagePath);
+                        System.out.println("  Graph visualization saved: " + graphImagePath);
                     } catch (IOException e) {
-                        System.err.println("⚠️  Could not save graph visualization: " + e.getMessage());
+                        System.err.println("  Could not save graph visualization: " + e.getMessage());
                     }
                 }
 
                 // Execute Prim's algorithm
-                System.out.println("\n🔵 Running Prim's Algorithm...");
+                System.out.println("\n Running Prim's Algorithm...");
                 PrimAlgorithm prim = new PrimAlgorithm();
                 prim.execute(graph);
                 prim.printResult();
@@ -97,14 +97,14 @@ public class Main {
                         String primImagePath = visualizationDir + "graph_" + graph.getId() + "_prim.png";
                         visualizer.visualizeMST(graph, prim.getMstEdges(),
                                 "Prim's Algorithm", prim.getTotalCost(), primImagePath);
-                        System.out.println("🖼️  Prim's MST visualization saved: " + primImagePath);
+                        System.out.println("  Prim's MST visualization saved: " + primImagePath);
                     } catch (IOException e) {
-                        System.err.println("⚠️  Could not save Prim's visualization: " + e.getMessage());
+                        System.err.println("⚠  Could not save Prim's visualization: " + e.getMessage());
                     }
                 }
 
                 // Execute Kruskal's algorithm
-                System.out.println("\n🟢 Running Kruskal's Algorithm...");
+                System.out.println("\nRunning Kruskal's Algorithm...");
                 KruskalAlgorithm kruskal = new KruskalAlgorithm();
                 kruskal.execute(graph);
                 kruskal.printResult();
@@ -115,9 +115,9 @@ public class Main {
                         String kruskalImagePath = visualizationDir + "graph_" + graph.getId() + "_kruskal.png";
                         visualizer.visualizeMST(graph, kruskal.getMstEdges(),
                                 "Kruskal's Algorithm", kruskal.getTotalCost(), kruskalImagePath);
-                        System.out.println("🖼️  Kruskal's MST visualization saved: " + kruskalImagePath);
+                        System.out.println("  Kruskal's MST visualization saved: " + kruskalImagePath);
                     } catch (IOException e) {
-                        System.err.println("⚠️  Could not save Kruskal's visualization: " + e.getMessage());
+                        System.err.println("  Could not save Kruskal's visualization: " + e.getMessage());
                     }
                 }
 
@@ -129,14 +129,14 @@ public class Main {
                                 prim.getMstEdges(), kruskal.getMstEdges(),
                                 prim.getTotalCost(), kruskal.getTotalCost(),
                                 comparisonPath);
-                        System.out.println("🖼️  Comparison visualization saved: " + comparisonPath);
+                        System.out.println("  Comparison visualization saved: " + comparisonPath);
                     } catch (IOException e) {
-                        System.err.println("⚠️  Could not save comparison visualization: " + e.getMessage());
+                        System.err.println("  Could not save comparison visualization: " + e.getMessage());
                     }
                 }
 
                 // Compare results
-                System.out.println("\n📋 Algorithm Comparison:");
+                System.out.println("\n Algorithm Comparison:");
                 printComparison(prim, kruskal);
 
                 // Collect results for output
@@ -148,7 +148,7 @@ public class Main {
 
             // Write results to files
             printSeparator();
-            System.out.println("💾 Saving results...\n");
+            System.out.println(" Saving results...\n");
 
             JsonWriter writer = new JsonWriter();
 
@@ -165,7 +165,7 @@ public class Main {
             printFooter();
 
         } catch (IOException e) {
-            System.err.println("\n❌ ERROR: " + e.getMessage());
+            System.err.println("\n ERROR: " + e.getMessage());
             e.printStackTrace();
             System.exit(1);
         }
@@ -220,11 +220,11 @@ public class Main {
 
         // Determine more efficient algorithm (fewer operations)
         if (prim.getOperationsCount() < kruskal.getOperationsCount()) {
-            System.out.println("  📊 Prim's performed fewer operations");
+            System.out.println("   Prim's performed fewer operations");
         } else if (kruskal.getOperationsCount() < prim.getOperationsCount()) {
-            System.out.println("  📊 Kruskal's performed fewer operations");
+            System.out.println("   Kruskal's performed fewer operations");
         } else {
-            System.out.println("  📊 Both algorithms performed equal operations");
+            System.out.println("   Both algorithms performed equal operations");
         }
     }
 
@@ -233,7 +233,7 @@ public class Main {
      */
     private static void printHeader() {
         System.out.println("\n╔════════════════════════════════════════════════════════════════╗");
-        System.out.println("║        MST Assignment - Prim's & Kruskal's Algorithms         ║");
+        System.out.println("║        MST Assignment - Prim's & Kruskal's Algorithms          ║");
         System.out.println("║              Minimum Spanning Tree Computation                 ║");
         System.out.println("║                    BONUS: Graph Visualization                  ║");
         System.out.println("╚════════════════════════════════════════════════════════════════╝\n");
@@ -244,10 +244,10 @@ public class Main {
      */
     private static void printFooter() {
         System.out.println("\n╔════════════════════════════════════════════════════════════════╗");
-        System.out.println("║                    ✓ Processing Complete!                      ║");
-        System.out.println("║                                                                ║");
-        System.out.println("║  All results have been saved successfully.                    ║");
-        System.out.println("║  Check the output directory for JSON, CSV, and images.       ║");
+        System.out.println("║                    ✓ Processing Complete!                        ║");
+        System.out.println("║                                                                  ║");
+        System.out.println("║  All results have been saved successfully.                       ║");
+        System.out.println("║  Check the output directory for JSON, CSV, and images.           ║");
         System.out.println("╚════════════════════════════════════════════════════════════════╝\n");
     }
 

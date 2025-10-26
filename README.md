@@ -18,9 +18,10 @@ This report presents a comprehensive analysis of two fundamental algorithms for 
 - Graph density significantly impacts relative algorithm performance
 - For large graphs (25+ vertices), Kruskal's shows up to 2.95× faster execution
 
+
 ---
 
-## 1. Input Data Summary
+## 1. Input Data  Summary 
 
 ### 1.1 Dataset Overview
 
